@@ -2,23 +2,23 @@ const Authors = (props) => {
     if (!props.show) {
       return null
     }
-    const authors = []
+    const books = props.books
   
     return (
       <div>
-        <h2>authors</h2>
+        <h2>books</h2>
         <table>
           <tbody>
             <tr>
               <th></th>
-              <th>born</th>
-              <th>books</th>
+              <th>author</th>
+              <th>published</th>
             </tr>
-            {authors.map((a) => (
-              <tr key={a.name}>
-                <td>{a.name}</td>
-                <td>{a.born}</td>
-                <td>{a.bookCount}</td>
+            {books.map((a) => (
+              <tr key={a.id}>
+                <td>{a.title}</td>
+                <td>{a.author}</td>
+                <td>{a.published}</td>
               </tr>
             ))}
           </tbody>
