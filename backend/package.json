@@ -11,6 +11,7 @@
   "author": "Susanna Rajamäki",
   "license": "MIT",
   "dependencies": {
+    "@apollo/client": "^3.12.7",
     "@apollo/server": "^4.11.3",
     "graphql": "^16.10.0",
     "nodemon": "^3.1.9",
