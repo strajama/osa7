@@ -23,7 +23,7 @@ const resolvers = {
         return Book.find({ genres: args.genre }).populate('author')
       }
       const author = await Author.findOne({ name: args.author })
-      return Book.find({ author: author })
+      return Book.find({ author: author }).populate('author')
     },
     me: (_root, _args, context) => {
       return context.currentUser
@@ -58,7 +58,8 @@ const resolvers = {
       }
       const book = new Book( { ...args, author: existingAuthor._id })
       try {
-        return (await book.save()).populate('author')
+        const savedBook = await book.save()
+        return savedBook.populate('author')
       } catch (error) {
         throw new GraphQLError('Saving book failed',
           { extensions: { code: 'BAD_USER_INPUT', invalidArgs: args, error } })

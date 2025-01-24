@@ -15,30 +15,30 @@ const typeDefs = `
   }
 
   type User {
-  username: String!
-  favoriteGenre: String!
-  id: ID!
+    username: String!
+    favoriteGenre: String!
+    id: ID!
 }
 
-type Token {
-  value: String!
+  type Token {
+    value: String!
 }
 
   type Mutation {
-  addBook(
-    title: String!
-    author: String!
-    published: Int!
-    genres: [String!]!
-    ): Book
-  editAuthor(
-    name: String!
-    setBornTo: Int!
-  ): Author
+    addBook(
+      title: String!
+      author: String!
+      published: Int!
+      genres: [String!]!
+      ): Book
+    editAuthor(
+      name: String!
+      setBornTo: Int!
+    ): Author
     createUser(
-    username: String!
-    favoriteGenre: String!
-  ): User
+      username: String!
+      favoriteGenre: String!
+    ): User
   login(
     username: String!
     password: String!
