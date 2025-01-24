@@ -3,8 +3,8 @@ import { useMutation } from '@apollo/client'
 import { LOGIN } from '../queries'
 
 const Login = ({ show, setToken }) => {
-  const [username, setUsername] = useState('susanna')
-  const [password, setPassword] = useState('secret')
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
   const [ login, result ] = useMutation(LOGIN, {
     onError: (error) => {

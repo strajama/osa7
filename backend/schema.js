@@ -52,5 +52,9 @@ const typeDefs = `
     allAuthors: [Author!]!
     me: User
   }
+
+  type Subscription {
+    bookAdded: Book!
+  }
 `
 module.exports = typeDefs
